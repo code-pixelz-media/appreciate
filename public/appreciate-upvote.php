@@ -61,8 +61,8 @@ function display_voting_sc() {
 
 	 return $fullcontent; */
 	 echo $after_content;
-$content = ob_get_contents();
-ob_end_clean();
+	$content = ob_get_contents();
+	ob_end_clean();
 return $content;
 
 }

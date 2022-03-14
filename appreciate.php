@@ -118,8 +118,11 @@ if ( ! function_exists( 'appreciate_vote_status' ) ) :
 	function appreciate_vote_status( $pid, $cuid ) {
 
 		$appreciate_vote_keys          = array( 'appreciate_upvote', 'appreciate_downvote' );
-		$get_appreciate_upvote         = esc_attr(get_user_meta( $cuid, 'appreciate_upvote', false ),'APPRECIATE');
-		$get_appreciate_downvote       = esc_attr(get_user_meta( $cuid, 'appreciate_downvote', false ),'APPRECIATE');
+		// $get_appreciate_upvote         = esc_attr(get_user_meta( $cuid, 'appreciate_upvote', false ),APPRECIATE);
+		$get_appreciate_upvote         = get_user_meta( $cuid, 'appreciate_upvote', false );
+		$get_appreciate_downvote       = get_user_meta( $cuid, 'appreciate_downvote', false );
+		// $get_appreciate_downvote       = esc_attr(get_user_meta( $cuid, 'appreciate_downvote', false ),APPRECIATE);
+		// var_dump($get_appreciate_downvote);
 		$appreciate_check_upvote_pid   = $get_appreciate_upvote;
 		$appreciate_check_downvote_pid = $get_appreciate_downvote;
 		$appreciate_vote_status        = __('none','APPRECIATE');
@@ -186,6 +189,8 @@ endif;
 
 //display__voting
 function cspd_after_post_content($content){
+	global $post;
+	$post_status = $post->post_status;
     if (is_single()) {  
         $content .= do_shortcode("[display__voting]");
     }

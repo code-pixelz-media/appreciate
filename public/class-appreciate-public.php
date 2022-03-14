@@ -74,6 +74,7 @@ class Appreciate_Public {
 		 */
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/appreciate-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( "fontawesome", plugin_dir_url( __FILE__ ) . 'css/fontawesome.css', array(), $this->version, 'all' );
 
 	}
 
@@ -98,6 +99,7 @@ class Appreciate_Public {
 		wp_enqueue_script( $this->plugin_name . '-vanilla', plugin_dir_url( __FILE__ ) . 'js/appreciate.vanilla.js', array( 'jquery' ), $this->version, true );
 		wp_enqueue_script( $this->plugin_name . '-upvoteJquery', plugin_dir_url( __FILE__ ) . 'js/appreciate.jquery.js', array( 'jquery' ), $this->version, true );
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/appreciate-public.js', array( 'jquery' ), $this->version, true );
+		wp_enqueue_script( "fontawesome", plugin_dir_url( __FILE__ ) . 'js/fontawesome.js', array( 'jquery' ), $this->version, true );
 
 	}
 

@@ -143,9 +143,9 @@ if ( !class_exists('Cpm_Plugin') ) {
         * Add menu page.
         */
         public function Cpm_Plugin_register_menu_page() {
-            //add_menu_page( __( 'Appreciate', 'Cpm_Plugin'), 'Appreciate', 'manage_options', 'cpm-plugin', array($this, 'Cpm_Plugin_add_setting_page' ), '', 20 );
+            // add_menu_page( __( 'Appreciate', 'Cpm_Plugin'), 'Appreciate', 'manage_options', 'cpm-plugin', array($this, 'Cpm_Plugin_add_setting_page' ), '', 20 );
             
-			add_submenu_page('options-general.php' ,__( 'Appreciate', 'Cpm_Plugin'), 'Appreciate', 'manage_options', 'appreciate', array($this, 'Cpm_Plugin_add_setting_page' ), '', 20 );
+			add_submenu_page('options-general.php' ,__( 'Appreciate', 'Cpm_Plugin'), 'Appreciate', 'manage_options', 'appreciate', array($this, 'Cpm_Plugin_add_setting_page' ), 0, 20 );
         }
 
         /**
